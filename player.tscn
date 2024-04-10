@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba4rjrivtb041"]
+
+[ext_resource type="Texture2D" uid="uid://d002imuibugd7" path="res://ship.png" id="1_nr3ei"]
+[ext_resource type="Texture2D" uid="uid://bxsgf00kujt1l" path="res://turret.png" id="2_et0t4"]
+
+[node name="ship" type="Node2D"]
+
+[node name="body" type="Sprite2D" parent="."]
+texture = ExtResource("1_nr3ei")
+metadata/_edit_lock_ = true
+
+[node name="gun" type="Sprite2D" parent="."]
+texture = ExtResource("2_et0t4")
+metadata/_edit_lock_ = true
