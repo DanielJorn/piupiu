@@ -1,9 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cumj3l3q4evy5"]
+[gd_scene load_steps=2 format=3 uid="uid://ilckymlaoewl"]
 
-[ext_resource type="PackedScene" uid="uid://ba4rjrivtb041" path="res://player.tscn" id="1_7xj82"]
+[ext_resource type="PackedScene" uid="uid://ba4rjrivtb041" path="res://player.tscn" id="1_i1lm0"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Scene" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="ship" parent="." instance=ExtResource("1_7xj82")]
+[node name="ship" parent="." instance=ExtResource("1_i1lm0")]
+position = Vector2(559, 339)

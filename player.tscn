@@ -1,19 +1,26 @@
 [gd_scene load_steps=4 format=3 uid="uid://ba4rjrivtb041"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_km0p1"]
-[ext_resource type="Texture2D" uid="uid://d002imuibugd7" path="res://ship.png" id="1_nr3ei"]
-[ext_resource type="Texture2D" uid="uid://bxsgf00kujt1l" path="res://turret.png" id="2_et0t4"]
+[ext_resource type="Texture2D" uid="uid://cao7efiyf4i6c" path="res://ship.png" id="1_nr3ei"]
+[ext_resource type="Texture2D" uid="uid://dnesve0k2dtc8" path="res://turret.png" id="2_et0t4"]
 
 [node name="ship" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_km0p1")
+speed = 800
 
 [node name="body" type="Sprite2D" parent="."]
 texture = ExtResource("1_nr3ei")
 metadata/_edit_lock_ = true
 
 [node name="gun" type="Sprite2D" parent="."]
+position = Vector2(-105, 0)
 texture = ExtResource("2_et0t4")
-metadata/_edit_lock_ = true
+offset = Vector2(25, 0)
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, -17, -12, -6, -15, 16, 14, 17, 15, 1, 9, -9)
+[node name="gun_tip" type="Node2D" parent="gun"]
+position = Vector2(73.5, 0)
+
+[node name="colider" type="CollisionPolygon2D" parent="."]
+rotation = 1.57079
+polygon = PackedVector2Array(-2, -187, -33, -182, -58, -103, -64, 101, -41, 182, 37, 185, 61, 126, 60, -104, 35, -179)
