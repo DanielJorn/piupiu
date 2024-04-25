@@ -10,6 +10,7 @@ extends CharacterBody2D
 # export експортує в едітор змінні які ти можеш через ползунки мінять
 @export var speed = 400
 @export var rotation_speed = 1.5
+@export var cannonball : PackedScene
 
 var rotation_direction = 0
 var gunRotationDegrees = 0
@@ -18,12 +19,14 @@ var gunRotationDegrees = 0
 func _draw():
 	# локальна позиція - відносно рутової ноди, глобальна - глобально лол
 	# перевод в локальну з глобальної треба, бо повертаючи пушку, локально кординати дула залишаються такі ж
-	draw_line(to_local(gun_tip.global_position), get_local_mouse_position(), Color.BLACK, 10)
+	draw_line(to_local(gun_tip.global_position), get_local_mouse_position(), Color.BLACK, 5)
 
 func get_input():
 	gunRotationDegrees = rad_to_deg(to_local(gun.global_position).angle_to_point(get_local_mouse_position()))
 	rotation_direction = Input.get_axis("left", "right")
-	velocity = transform.x * Input.get_axis("down", "up") * speed
+	velocity = (transform.x * Input.get_axis("down", "up") * speed)*0.05 + velocity*0.95
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
 
 func _physics_process(delta):
 	get_input()
@@ -32,6 +35,11 @@ func _physics_process(delta):
 	move_and_slide()
 	gun.rotation_degrees = gunRotationDegrees
 	queue_redraw()
+
+func shoot():
+	var b = cannonball.instantiate()
+	owner.add_child(b)
+	b.transform = $gun/gun_tip.global_transform
 
 func _ready():
 	pass

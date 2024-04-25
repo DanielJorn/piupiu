@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://wregsjw5wt6h"]
+
+[ext_resource type="Script" path="res://cannonball.gd" id="1_amcic"]
+[ext_resource type="Texture2D" uid="uid://qpkqqm86jloc" path="res://cannonball.png" id="2_py4f5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vdqvh"]
+radius = 5.09902
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_amcic")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_py4f5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vdqvh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
