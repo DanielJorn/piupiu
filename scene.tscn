@@ -8,6 +8,8 @@
 [node name="Scene" type="Node2D"]
 
 [node name="background" type="Sprite2D" parent="."]
+position = Vector2(578, 339.5)
+scale = Vector2(0.639583, 0.708333)
 texture = ExtResource("4_vr6da")
 
 [node name="ship" parent="." groups=["player"] instance=ExtResource("1_i1lm0")]

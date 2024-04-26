@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var gun_tip = $gun/gun_tip
 
 # export експортує в едітор змінні які ти можеш через ползунки мінять
-@export var speed = 400
+@export var speed = 300
 @export var rotation_speed = 1.5
 @export var cannonball : PackedScene
 
@@ -23,8 +23,10 @@ func _draw():
 
 func get_input():
 	gunRotationDegrees = rad_to_deg(to_local(gun.global_position).angle_to_point(get_local_mouse_position()))
-	rotation_direction = Input.get_axis("left", "right")
-	velocity = (transform.x * Input.get_axis("down", "up") * speed)*0.05 + velocity*0.95
+	rotation_direction = Input.get_axis("left", "right") * (-1 if Input.get_axis("down", "up") == -1 else 1)
+	velocity = velocity*0.95 + (transform.x * (0.333+0.666*Input.get_axis("down", "up")) * speed)*0.05
+	#velocity = velocity*0.95 + (transform.x * speed)*0.05 + Input.get_axis("down", "up")
+	rotation_speed = rotation_speed*0.75 + (velocity.length()/speed)*2
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 

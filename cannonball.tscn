@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://qpkqqm86jloc" path="res://cannonball.png" id="2_py4f5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vdqvh"]
-radius = 5.09902
+radius = 20.025
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_amcic")
