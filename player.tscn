@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://ba4rjrivtb041"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_km0p1"]
-[ext_resource type="Texture2D" uid="uid://cao7efiyf4i6c" path="res://ship.png" id="1_nr3ei"]
-[ext_resource type="PackedScene" uid="uid://wregsjw5wt6h" path="res://cannonball.tscn" id="2_4g8od"]
-[ext_resource type="Texture2D" uid="uid://dnesve0k2dtc8" path="res://turret.png" id="2_et0t4"]
+[ext_resource type="Texture2D" uid="uid://cao7efiyf4i6c" path="res://sprites/ship.png" id="1_nr3ei"]
+[ext_resource type="PackedScene" path="res://cannonball.tscn" id="2_4g8od"]
+[ext_resource type="Texture2D" uid="uid://dnesve0k2dtc8" path="res://sprites/turret.png" id="2_et0t4"]
 
 [node name="ship" type="CharacterBody2D"]
 scale = Vector2(0.3, 0.3)
@@ -27,3 +27,6 @@ position = Vector2(73.5, 0)
 [node name="colider" type="CollisionPolygon2D" parent="."]
 rotation = 1.57079
 polygon = PackedVector2Array(0.00116703, -186, -33.9989, -182, -57.9994, -96.0004, -62.0007, 114, -40.0011, 181, -0.00116076, 185, 41.9989, 181, 63.9993, 117, 58.0006, -98.9996, 37.0011, -180)
+
+[node name="shoot_timer" type="Timer" parent="."]
+one_shot = true

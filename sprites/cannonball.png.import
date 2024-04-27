@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cao7efiyf4i6c"
-path="res://.godot/imported/ship.png-232cf3806b465084ad9b06c70afe8991.ctex"
+uid="uid://qpkqqm86jloc"
+path="res://.godot/imported/cannonball.png-b619338d25061ca56cc022615ea4c4eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ship.png"
-dest_files=["res://.godot/imported/ship.png-232cf3806b465084ad9b06c70afe8991.ctex"]
+source_file="res://sprites/cannonball.png"
+dest_files=["res://.godot/imported/cannonball.png-b619338d25061ca56cc022615ea4c4eb.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qpkqqm86jloc"
-path="res://.godot/imported/cannonball.png-4a831713ee979e8df00fce48b7e22150.ctex"
+uid="uid://b6vi8qntacr28"
+path="res://.godot/imported/bullet.png-ff1424653e10246c11e3724e402c519e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cannonball.png"
-dest_files=["res://.godot/imported/cannonball.png-4a831713ee979e8df00fce48b7e22150.ctex"]
+source_file="res://bullet.png"
+dest_files=["res://.godot/imported/bullet.png-ff1424653e10246c11e3724e402c519e.ctex"]
 
 [params]
 
