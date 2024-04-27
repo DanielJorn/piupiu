@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ilckymlaoewl"]
+[gd_scene load_steps=4 format=3 uid="uid://ilckymlaoewl"]
 
 [ext_resource type="PackedScene" uid="uid://ba4rjrivtb041" path="res://player.tscn" id="1_i1lm0"]
-[ext_resource type="PackedScene" uid="uid://cxs4dx31u80ul" path="res://cannonball.tscn" id="2_1gvdy"]
 [ext_resource type="Script" path="res://enemy_ship_logic.gd" id="3_ajm1p"]
 [ext_resource type="Texture2D" uid="uid://bjgg0ydp1o4e0" path="res://sprites/background.png" id="4_vr6da"]
 
@@ -14,8 +13,6 @@ texture = ExtResource("4_vr6da")
 
 [node name="ship" parent="." groups=["player"] instance=ExtResource("1_i1lm0")]
 position = Vector2(559, 339)
-
-[node name="cannonball" parent="." instance=ExtResource("2_1gvdy")]
 
 [node name="enemy_ship" parent="." instance=ExtResource("1_i1lm0")]
 position = Vector2(559, 339)
