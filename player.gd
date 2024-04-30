@@ -5,8 +5,9 @@ extends CharacterBody2D
 @onready var ship = $ship
 @onready var gun_tip = $gun/gun_tip
 @onready var shoot_timer = $shoot_timer
+#@onready var colider = $colider as CollisionPolygon2D
 
-@export var speed = 300
+@export var speed = 100
 @export var rotation_speed = 1.5
 @export var cannonball : PackedScene
 @export var fire_rate = 0.5
@@ -18,10 +19,19 @@ var can_shoot = true
 func _draw():
 	draw_line(to_local(gun_tip.global_position), get_local_mouse_position(), Color.BLACK, 5)
 
+func _on_body_entered(body):
+	body.queue_free()
+	queue_free()
+
 func get_input():
-	gunRotationDegrees = rad_to_deg(to_local(gun.global_position).angle_to_point(get_local_mouse_position()))
+	gunRotationDegrees = rad_to_deg(
+		to_local(gun.global_position)
+		.angle_to_point(get_local_mouse_position())
+	)
+	# if no Input, then assign 1, otherwise -1
 	rotation_direction = Input.get_axis("left", "right") * (-1 if Input.get_axis("down", "up") == -1 else 1)
-	velocity = velocity*0.95 + (transform.x * (0.333+0.666*Input.get_axis("down", "up")) * speed)*0.05
+	
+	velocity = velocity*0.95 + (transform.x * (1 + 2*Input.get_axis("down", "up")) * speed)*0.05
 
 	rotation_speed = rotation_speed*0.75 + (velocity.length()/speed)*2
 	if Input.is_action_just_pressed("shoot") and can_shoot:
