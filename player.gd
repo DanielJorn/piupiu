@@ -22,8 +22,9 @@ func _draw():
 
 
 func _on_body_entered(body):
-	body.queue_free()
-	queue_free()
+	if not body.is_in_group("player"):
+		#body.queue_free()
+		queue_free()
 
 
 func get_input():
@@ -77,3 +78,4 @@ func shoot():
 	var b = cannonball.instantiate()
 	owner.add_child(b)
 	b.transform = $gun/gun_tip.global_transform
+
